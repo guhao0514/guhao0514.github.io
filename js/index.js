@@ -9,16 +9,16 @@ $(function(){
 			});
 			$("#skill_info").append("<p>"+data.skill_info+"</p>");
 			$(".skill_int").append("<ul></ul>");
-			data.angularJs.forEach(function(item){
+			data.Navicat.forEach(function(item){
 				$("#skill_int1 ul").append("<li>"+item+"</li>");
 			});
-			data.html.forEach(function(item){
+			data.Xshell.forEach(function(item){
 				$("#skill_int2 ul").append("<li>"+item+"</li>");
 			});
-			data.css.forEach(function(item){
+			data.JSF.forEach(function(item){
 				$("#skill_int3 ul").append("<li>"+item+"</li>");
 			});
-			data.javaScript.forEach(function(item){
+			data.JMQ.forEach(function(item){
 				$("#skill_int4 ul").append("<li>"+item+"</li>");
 			});
 			$("#exp_info").append("<p>"+data.exp_info+"</p>");
@@ -160,10 +160,10 @@ $(function(){
 });
 //顶部标题文字切换
 	$("#header_p").mouseover(function(){
-		$("#header_p1").html("Resume");
-		$("#header_p2").html("前端工程师");
+		$("#header_p1").html("web ");
+		$("#header_p2").html("test工程师");
 	}).mouseout(function(){
-		$("#header_p1").html("F2E");
+		$("#header_p1").html("谷小浩");
 		$("#header_p2").html("个人简历");	
 	});
 //顶部导航取消
