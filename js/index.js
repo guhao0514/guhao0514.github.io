@@ -1,4 +1,4 @@
-$(function(){
+ï»¿$(function(){
 	$.ajax({
 		type: "GET",
 		url: "ajax/message.json",
@@ -55,7 +55,7 @@ $(function(){
 				});
 			});	
 			$("aside a").eq(0).addClass("selected").siblings().removeClass("selected");
-			console.log("Hi! ÅóÓÑ£¬¸ĞĞ»ÄúÔÄ¶Á¼òÀú´úÂë¡£\n  Èç¹ûÄúÓĞÊ²Ã´½¨Òé»òÕßÏëÈëÃÅÇ°¶Ë£¬»¶Ó­Äú¼ÓÈëÎÒÃÇ,ÎÒÃÇ»¥ÏàÑ§Ï°£¬¹²Í¬½ø²½^_^ \n %c QQĞ¡Èº(http://t.cn/RtlQbTq)","color: red");
+			console.log("Hi! æœ‹å‹ï¼Œæ„Ÿè°¢æ‚¨é˜…è¯»ç®€å†ä»£ç ã€‚\n  å¦‚æœæ‚¨æœ‰ä»€ä¹ˆå»ºè®®æˆ–è€…æƒ³å…¥é—¨å‰ç«¯ï¼Œæ¬¢è¿æ‚¨åŠ å…¥æˆ‘ä»¬,æˆ‘ä»¬äº’ç›¸å­¦ä¹ ï¼Œå…±åŒè¿›æ­¥^_^ \n %c QQå°ç¾¤(http://t.cn/RtlQbTq)","color: red");
 		},
 		afterLoad: function(anchorLink,index){
 			if(index==1){
@@ -63,7 +63,7 @@ $(function(){
 			}
 			if(index==2){
 				$("aside a").eq(1).addClass("selected").siblings().removeClass("selected");
-				$("#about_content h1").after("<div class='title_en'><h2>¡¤About me¡¤</h2></div>");
+				$("#about_content h1").after("<div class='title_en'><h2>About me</h2></div>");
 				$(".title_en").animate({width:"130px"},800,function(){
 					$(".title_en h2").slideDown(400);
 				});
@@ -79,7 +79,7 @@ $(function(){
 			}
 			if(index==3){
 				$("aside a").eq(2).addClass("selected").siblings().removeClass("selected");
-				$("#skill_content h1").after("<div class='title_en'><h2>¡¤Skill¡¤</h2></div>");
+				$("#skill_content h1").after("<div class='title_en'><h2>Skill</h2></div>");
 				$(".title_en").animate({width:"130px"},800,function(){
 					$(".title_en h2").slideDown(400);
 				});	
@@ -87,7 +87,7 @@ $(function(){
 			}
 			if(index==4){
 				$("aside a").eq(3).addClass("selected").siblings().removeClass("selected");
-				$("#exp_content h1").after("<div class='title_en'><h2>¡¤Experience¡¤</h2></div>");
+				$("#exp_content h1").after("<div class='title_en'><h2>Experience</h2></div>");
 				$(".title_en").animate({width:"130px"},800,function(){
 					$(".title_en h2").slideDown(400);
 				});	
@@ -105,7 +105,7 @@ $(function(){
 			}
 			if(index==5){
 				$("aside a").eq(4).addClass("selected").siblings().removeClass("selected");
-				$("#demo_content h1").after("<div class='title_en'><h2>¡¤Demo¡¤</h2></div>");
+				$("#demo_content h1").after("<div class='title_en'><h2>Demo</h2></div>");
 				$(".title_en").animate({width:"130px"},800,function(){
 					$(".title_en h2").slideDown(400);
 				});	
@@ -122,7 +122,7 @@ $(function(){
 			}
 			if(index==6){
 				$("aside a").eq(5).addClass("selected").siblings().removeClass("selected");
-				$("#contact_content h1").after("<div class='title_en'><h2>¡¤Contact me¡¤</h2></div>");
+				$("#contact_content h1").after("<div class='title_en'><h2>Â·Contact meÂ·</h2></div>");
 				$(".title_en").animate({width:"130px"},800,function(){
 					$(".title_en h2").slideDown(400);
 				});	
@@ -158,30 +158,30 @@ $(function(){
 		}
 	});
 });
-//¶¥²¿±êÌâÎÄ×ÖÇĞ»»
+//é¡¶éƒ¨æ ‡é¢˜æ–‡å­—åˆ‡æ¢
 	$("#header_p").mouseover(function(){
 		$("#header_p1").html("web ");
-		$("#header_p2").html("test¹¤³ÌÊ¦");
+		$("#header_p2").html("testå·¥ç¨‹å¸ˆ");
 	}).mouseout(function(){
-		$("#header_p1").html("¹ÈĞ¡ºÆ");
-		$("#header_p2").html("¸öÈË¼òÀú");	
+		$("#header_p1").html("è°·å°æµ©");
+		$("#header_p2").html("ä¸ªäººç®€å†");	
 	});
-//¶¥²¿µ¼º½È¡Ïû
+//é¡¶éƒ¨å¯¼èˆªå–æ¶ˆ
 	$("header nav a:not(':first')").click(function(){
-		alert("ÕıÔÚÅ¬Á¦½¨ÉèÖĞ...ÇëÉÔµÈ");
+		alert("æ­£åœ¨åŠªåŠ›å»ºè®¾ä¸­...è¯·ç¨ç­‰");
 		return false;
 	});
-//²à±ßµ¼º½ÎÄ×ÖÇĞ»»
+//ä¾§è¾¹å¯¼èˆªæ–‡å­—åˆ‡æ¢
 	$("aside a").hover(function(){
 		$(this).find("b").fadeToggle(200,"easeInOutCubic");
 	});
-// Í·ÏñÇĞ»»
+// å¤´åƒåˆ‡æ¢
 	$("#home_photo2").hover(function(){
 		$(this).fadeTo(800,1);
 		},function(){
 			$(this).stop(true,false).fadeTo(800,0);
 	});
-// ¼¼ÄÜÃ÷Ï¸ÇĞ»»
+// æŠ€èƒ½æ˜ç»†åˆ‡æ¢
 	$(".skill_icon").click(function(){
 		$(".skill_int").each(function(){
 			if($(this).is(":visible")){
@@ -197,7 +197,7 @@ $(function(){
 			$(this).siblings(".skill_flag").removeClass("skill_flag_scale");
 		}
 	});
-// Í¼Æ¬ÂÖ²¥
+// å›¾ç‰‡è½®æ’­
 	$("#exp_list_slider").width($(".exp_list").width());
 	$("#exp_list_content").width($(".exp_list").width()*3);
 	$("#exp_list_slider_content").mouseenter(function(){
@@ -235,7 +235,7 @@ $(function(){
 			page++;
 		}
 	});
-// Ê±¹âÖá
+// æ—¶å…‰è½´
 	var x=10;
 	var y=20;
 	$("#exp_timeline a").mouseover(function(e){
@@ -257,13 +257,13 @@ $(function(){
 	}).click(function(){
 		return false;
 	});
-// µã»÷ÁôÑÔ
+// ç‚¹å‡»ç•™è¨€
 	$("#contact_message1").click(function(){
 		$(this).fadeOut(200,function(){
 			$("#contact_form").fadeIn(200);
 		})
 	});
-////ÄÚÈİÊÊÓ¦¾ÓÖĞ
+////å†…å®¹é€‚åº”å±…ä¸­
 	$(function(){
 		$("aside").css({"top":($(".active").height()-$("aside").height())/2});
 		$("#home_content").css({"padding-top":($(".active").height()-$("#home_content").height())/6});
