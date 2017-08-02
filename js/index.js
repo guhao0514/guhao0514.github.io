@@ -63,7 +63,7 @@ $(function(){
 			}
 			if(index==2){
 				$("aside a").eq(1).addClass("selected").siblings().removeClass("selected");
-				$("#about_content h1").after("<div class='title_en'><h2>， About me ，</h2></div>");
+				$("#about_content h1").after("<div class='title_en'><h2>，About me，</h2></div>");
 				$(".title_en").animate({width:"130px"},800,function(){
 					$(".title_en h2").slideDown(400);
 				});
@@ -79,7 +79,7 @@ $(function(){
 			}
 			if(index==3){
 				$("aside a").eq(2).addClass("selected").siblings().removeClass("selected");
-				$("#skill_content h1").after("<div class='title_en'><h2>， Skill ，</h2></div>");
+				$("#skill_content h1").after("<div class='title_en'><h2>，Skill，</h2></div>");
 				$(".title_en").animate({width:"130px"},800,function(){
 					$(".title_en h2").slideDown(400);
 				});	
@@ -87,7 +87,7 @@ $(function(){
 			}
 			if(index==4){
 				$("aside a").eq(3).addClass("selected").siblings().removeClass("selected");
-				$("#exp_content h1").after("<div class='title_en'><h2>， Experience ，</h2></div>");
+				$("#exp_content h1").after("<div class='title_en'><h2>，Experience，</h2></div>");
 				$(".title_en").animate({width:"130px"},800,function(){
 					$(".title_en h2").slideDown(400);
 				});	
@@ -105,7 +105,7 @@ $(function(){
 			}
 			if(index==5){
 				$("aside a").eq(4).addClass("selected").siblings().removeClass("selected");
-				$("#demo_content h1").after("<div class='title_en'><h2>， Demo ，</h2></div>");
+				$("#demo_content h1").after("<div class='title_en'><h2>，Demo，</h2></div>");
 				$(".title_en").animate({width:"130px"},800,function(){
 					$(".title_en h2").slideDown(400);
 				});	
@@ -122,7 +122,7 @@ $(function(){
 			}
 			if(index==6){
 				$("aside a").eq(5).addClass("selected").siblings().removeClass("selected");
-				$("#contact_content h1").after("<div class='title_en'><h2>， Contact me ，</h2></div>");
+				$("#contact_content h1").after("<div class='title_en'><h2>，Contact me，</h2></div>");
 				$(".title_en").animate({width:"130px"},800,function(){
 					$(".title_en h2").slideDown(400);
 				});	
