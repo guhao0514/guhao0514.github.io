@@ -163,7 +163,7 @@
 		$("#header_p1").html("web ");
 		$("#header_p2").html("test工程师");
 	}).mouseout(function(){
-		$("#header_p1").html("谷小浩");
+		$("#header_p1").html("谷浩");
 		$("#header_p2").html("个人简历");	
 	});
 //顶部导航取消
