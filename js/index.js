@@ -9,16 +9,16 @@
 			});
 			$("#skill_info").append("<p>"+data.skill_info+"</p>");
 			$(".skill_int").append("<ul></ul>");
-			data.Navicat.forEach(function(item){
+			data.angularJs.forEach(function(item){
 				$("#skill_int1 ul").append("<li>"+item+"</li>");
 			});
-			data.Xshell.forEach(function(item){
+			data.html.forEach(function(item){
 				$("#skill_int2 ul").append("<li>"+item+"</li>");
 			});
-			data.JSF.forEach(function(item){
+			data.css.forEach(function(item){
 				$("#skill_int3 ul").append("<li>"+item+"</li>");
 			});
-			data.JMQ.forEach(function(item){
+			data.javaScript.forEach(function(item){
 				$("#skill_int4 ul").append("<li>"+item+"</li>");
 			});
 			$("#exp_info").append("<p>"+data.exp_info+"</p>");
@@ -63,7 +63,7 @@
 			}
 			if(index==2){
 				$("aside a").eq(1).addClass("selected").siblings().removeClass("selected");
-				$("#about_content h1").after("<div class='title_en'><h2>About me</h2></div>");
+				$("#about_content h1").after("<div class='title_en'><h2>· About me ·</h2></div>");
 				$(".title_en").animate({width:"130px"},800,function(){
 					$(".title_en h2").slideDown(400);
 				});
@@ -79,7 +79,7 @@
 			}
 			if(index==3){
 				$("aside a").eq(2).addClass("selected").siblings().removeClass("selected");
-				$("#skill_content h1").after("<div class='title_en'><h2>Skill</h2></div>");
+				$("#skill_content h1").after("<div class='title_en'><h2>· Skill ·</h2></div>");
 				$(".title_en").animate({width:"130px"},800,function(){
 					$(".title_en h2").slideDown(400);
 				});	
@@ -87,7 +87,7 @@
 			}
 			if(index==4){
 				$("aside a").eq(3).addClass("selected").siblings().removeClass("selected");
-				$("#exp_content h1").after("<div class='title_en'><h2>Experience</h2></div>");
+				$("#exp_content h1").after("<div class='title_en'><h2>· Experience ·</h2></div>");
 				$(".title_en").animate({width:"130px"},800,function(){
 					$(".title_en h2").slideDown(400);
 				});	
@@ -105,7 +105,7 @@
 			}
 			if(index==5){
 				$("aside a").eq(4).addClass("selected").siblings().removeClass("selected");
-				$("#demo_content h1").after("<div class='title_en'><h2>Demo</h2></div>");
+				$("#demo_content h1").after("<div class='title_en'><h2>· Demo ·</h2></div>");
 				$(".title_en").animate({width:"130px"},800,function(){
 					$(".title_en h2").slideDown(400);
 				});	
@@ -122,7 +122,7 @@
 			}
 			if(index==6){
 				$("aside a").eq(5).addClass("selected").siblings().removeClass("selected");
-				$("#contact_content h1").after("<div class='title_en'><h2>·Contact me·</h2></div>");
+				$("#contact_content h1").after("<div class='title_en'><h2>· Contact me ·</h2></div>");
 				$(".title_en").animate({width:"130px"},800,function(){
 					$(".title_en h2").slideDown(400);
 				});	
@@ -160,10 +160,10 @@
 });
 //顶部标题文字切换
 	$("#header_p").mouseover(function(){
-		$("#header_p1").html("web ");
-		$("#header_p2").html("test工程师");
+		$("#header_p1").html("Resume");
+		$("#header_p2").html("前端工程师");
 	}).mouseout(function(){
-		$("#header_p1").html("谷浩");
+		$("#header_p1").html("王清野");
 		$("#header_p2").html("个人简历");	
 	});
 //顶部导航取消
@@ -199,7 +199,7 @@
 	});
 // 图片轮播
 	$("#exp_list_slider").width($(".exp_list").width());
-	$("#exp_list_content").width($(".exp_list").width()*3);
+	$("#exp_list_content").width($(".exp_list").width()*2);
 	$("#exp_list_slider_content").mouseenter(function(){
 		$("#exp_list_to").stop(true,false).fadeTo(700,1);
 	}).mouseleave(function(){
@@ -271,4 +271,4 @@
 		$("#skill_content").css({"padding-top":($(".active").height()-$("#skill_content").height())/6});
 		$("#exp_content").css({"padding-top":($(".active").height()-$("#exp_content").height())/6});
 		$("#demo_content").css({"padding-top":($(".active").height()-$("#demo_content").height())/6});
-	});
+});
