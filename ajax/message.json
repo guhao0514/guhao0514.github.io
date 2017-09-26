@@ -25,17 +25,16 @@
 		"掌握SQL语句进行增删改查操作"
 	],
 	"LoadRunner":[
-		"LoadRunner，是一种预测系统行为和性能的负载测试工具",
+		"LoadRunner是一种预测系统行为和性能的负载测试工具",
 		"它通过模拟实际用户的操作行为和实行实时性能监测",
 		"了解LoadRunner，进行添加事务，参数化，场景测试",
 		"正在学习LoadRunner"
 	],
 	"exp_info":"2014年实习期间，开始了web前端自学生涯。",
 	"contact_info":[
-		"for (var i = 0 ; i < myLife.length ; i++){",
-		"learnSomething();",
+		"带上我吧，一起看到更大的世界",
 		"热爱test，也热爱一切美好的事物",
 		"行路有良友，便是捷径",
-		"带上我吧，一起看到更大的世界,web test更贴近用户体验，这种体验非常美妙"
+		"web test更贴近用户体验，这种体验非常美妙"
 	]
 }
