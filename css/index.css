@@ -515,16 +515,16 @@ img#home_photo2 {
     transition : transform .25s;
 }
 #skill_icon1{
-    background: url(../image/Navicat.png) no-repeat ;
+    background: url(../image/pg.png) no-repeat ;
 }
 #skill_icon2{
-    background: url(../image/Xshell.png) no-repeat ;
+    background: url(../image/html.png) no-repeat ;
 }
 #skill_icon3{
-    background: url(../image/JSF.png) no-repeat ;
+    background: url(../image/css.png) no-repeat ;
 }
 #skill_icon4{
-    background: url(../image/JMQ.png) no-repeat ;
+    background: url(../image/js.png) no-repeat ;
 }
 .skill_name {
 	text-align: center;
@@ -717,10 +717,10 @@ img#home_photo2 {
 	text-indent: -9999px;
 	margin: 10px auto;
 	width: 800px;
-	background: url(../image/timeline.png) no-repeat center center;
+	background: url(../image/timeline1.png) no-repeat center center;
 }
 #exp_timeline div {
-	width: 390px;
+	width: 330px;
 	height: 50px;
 	margin: 0 auto;
 }
@@ -728,10 +728,13 @@ img#home_photo2 {
 	display: block;
 	float: left;
 	text-align: center;
-	margin: 10px 50px;
+	margin: 10px 85px;
 	width: 30px;
 	height: 30px;
 	cursor: pointer;
+}
+#exp_timeline #exp_a_2 {
+	margin: 10px 60px 10px 15px;
 }
 .exp_timeline_title{
 	position:absolute;
@@ -1148,4 +1151,9 @@ footer div a:hover {
 	-o-animation: b_to_t 1s;
 	animation: b_to_t 1s;
 	visibility: visible;
+}
+
+.Bold{
+	font-size: 16px;
+	font-weight: bold;
 }
