@@ -3,6 +3,6 @@
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www.guxiaohao.com$ [NC,OR]
 RewriteCond %{HTTP_HOST} ^guxiaohao.com$ [NC,OR]
-RewriteCond %{HTTP_HOST} ^zhaokeyu.gotoip2.com$ 
+RewriteCond %{HTTP_HOST} ^guhao.pw$ 
 RewriteRule ^(.*)$ http://www.guxiaohao.com/$1 [R=301,L]
 </IfModule>
