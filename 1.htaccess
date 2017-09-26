@@ -1,7 +1,8 @@
+
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^www.xiaoguhao001.top$ [NC,OR]
-RewriteCond %{HTTP_HOST} ^www.guhao.pw$ [NC,OR]
-RewriteCond %{HTTP_HOST} ^www.guxiaohao.top$ 
-RewriteRule ^(.*)$ http://www.guxiaohao.com$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^www.guxiaohao.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^guxiaohao.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^zhaokeyu.gotoip2.com$ 
+RewriteRule ^(.*)$ http://www.guxiaohao.com/$1 [R=301,L]
 </IfModule>
