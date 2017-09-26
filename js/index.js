@@ -160,8 +160,8 @@
 });
 //顶部标题文字切换
 	$("#header_p").mouseover(function(){
-		$("#header_p1").html("Resume");
-		$("#header_p2").html("web test工程师");
+		$("#header_p1").html("web");
+		$("#header_p2").html("test工程师");
 	}).mouseout(function(){
 		$("#header_p1").html("谷浩");
 		$("#header_p2").html("个人简历");	
