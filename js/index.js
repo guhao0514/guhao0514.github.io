@@ -9,16 +9,16 @@
 			});
 			$("#skill_info").append("<p>"+data.skill_info+"</p>");
 			$(".skill_int").append("<ul></ul>");
-			data.angularJs.forEach(function(item){
+			data.Jenkins.forEach(function(item){
 				$("#skill_int1 ul").append("<li>"+item+"</li>");
 			});
-			data.html.forEach(function(item){
+			data.Linux.forEach(function(item){
 				$("#skill_int2 ul").append("<li>"+item+"</li>");
 			});
-			data.css.forEach(function(item){
+			data.SQL.forEach(function(item){
 				$("#skill_int3 ul").append("<li>"+item+"</li>");
 			});
-			data.javaScript.forEach(function(item){
+			data.LoadRunner.forEach(function(item){
 				$("#skill_int4 ul").append("<li>"+item+"</li>");
 			});
 			$("#exp_info").append("<p>"+data.exp_info+"</p>");
