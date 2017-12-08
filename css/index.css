@@ -515,16 +515,16 @@ img#home_photo2 {
     transition : transform .25s;
 }
 #skill_icon1{
-    background: url(../image/pg.png) no-repeat ;
+    background: url(../image/Navicat.png) no-repeat ;
 }
 #skill_icon2{
-    background: url(../image/html.png) no-repeat ;
+    background: url(../image/Navicat.png) no-repeat ;
 }
 #skill_icon3{
-    background: url(../image/css.png) no-repeat ;
+    background: url(../image/Navicat.png) no-repeat ;
 }
 #skill_icon4{
-    background: url(../image/js.png) no-repeat ;
+    background: url(../image/Navicat.png) no-repeat ;
 }
 .skill_name {
 	text-align: center;
