@@ -1,4 +1,4 @@
-﻿$(function(){
+﻿﻿$(function(){
 	$.ajax({
 		type: "GET",
 		url: "ajax/message.json",
@@ -9,16 +9,16 @@
 			});
 			$("#skill_info").append("<p>"+data.skill_info+"</p>");
 			$(".skill_int").append("<ul></ul>");
-			data.Jenkins.forEach(function(item){
+			data.angularJs.forEach(function(item){
 				$("#skill_int1 ul").append("<li>"+item+"</li>");
 			});
-			data.Linux.forEach(function(item){
+			data.html.forEach(function(item){
 				$("#skill_int2 ul").append("<li>"+item+"</li>");
 			});
-			data.SQL.forEach(function(item){
+			data.css.forEach(function(item){
 				$("#skill_int3 ul").append("<li>"+item+"</li>");
 			});
-			data.LoadRunner.forEach(function(item){
+			data.javaScript.forEach(function(item){
 				$("#skill_int4 ul").append("<li>"+item+"</li>");
 			});
 			$("#exp_info").append("<p>"+data.exp_info+"</p>");
@@ -55,7 +55,7 @@
 				});
 			});	
 			$("aside a").eq(0).addClass("selected").siblings().removeClass("selected");
-			console.log("Hi! 朋友，感谢您阅读简历代码。\n  如果您有什么建议或者想入门前端，欢迎您加入我们,我们互相学习，共同进步^_^ \n %c QQ小群(http://t.cn/RtlQbTq)","color: red");
+			console.log("Hi! 朋友，感谢您阅读简历代码。\n  如果您有什么建议或者想入门前端测试，欢迎您加入我们,我们互相学习，共同进步^_^ ","color: red");
 		},
 		afterLoad: function(anchorLink,index){
 			if(index==1){
@@ -160,10 +160,10 @@
 });
 //顶部标题文字切换
 	$("#header_p").mouseover(function(){
-		$("#header_p1").html("web");
-		$("#header_p2").html("test工程师");
+		$("#header_p1").html("Resume");
+		$("#header_p2").html("前端测试工程师");
 	}).mouseout(function(){
-		$("#header_p1").html("谷浩");
+		$("#header_p1").html("谷小浩");
 		$("#header_p2").html("个人简历");	
 	});
 //顶部导航取消
@@ -271,4 +271,4 @@
 		$("#skill_content").css({"padding-top":($(".active").height()-$("#skill_content").height())/6});
 		$("#exp_content").css({"padding-top":($(".active").height()-$("#exp_content").height())/6});
 		$("#demo_content").css({"padding-top":($(".active").height()-$("#demo_content").height())/6});
-});
+	});
