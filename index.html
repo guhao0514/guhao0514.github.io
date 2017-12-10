@@ -336,8 +336,8 @@ var dataForWeixin = {
 		desc :   '很准的呦,都来试试吧！',
 		before_share : function()
 		{
-			//dataForWeixin.shareurl = "http://we6269.mtjkj.xyz/index.php?r=" + _host + "/wxapi.php/tinygame/iphone6/from/tl";
-			//dataForWeixin.title = "我叫"+name+"，我来自"+address+'，我是第'+''+'位警告日本的人'			
+			dataForWeixin.shareurl = "http://we6269.mtjkj.xyz/index.php?r=" + _host + "/wxapi.php/tinygame/iphone6/from/tl";
+			dataForWeixin.title = "我叫"+name+"，我来自"+address+'，我是第'+''+'位警告日本的人'			
 		},
 		callback : function() {
 			$post("/wxapi.php/wetest/inc_share","mid=31"); 
