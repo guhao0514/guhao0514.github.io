@@ -1,51 +1,170 @@
-﻿
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE HTML>  
+<html>  
+    <head>  
+        <title>谷小浩</title>  
+        <meta charset="utf-8">  
+        <style>  
+            .main_bar{  
+                width:1350px;  
+                height:350px;  
+                background-color:#6495ED;  
+                margin-top:10%;  
+            }         
+            #login_form{  
+                width:40%;  
+                height:100%;  
+                background-color:#112435;  
+                margin:0 auto;  
+            }  
+            .title{  
+                width:100%;  
+                height:55px;  
+                color:#ffffff;  
+                border-bottom:1px solid #ffffff;  
+                font-size:20pt;  
+                font-family:"微软雅黑";  
+                line-height:55px;  
+                text-align:center;                
+            }  
+            #form_widget{  
+                width:100%;  
+                height:295px;  
+                background-color:#808080;  
+            }  
+            .txt{  
+                display:block;/*设置为独立块（换行）*/  
+                width:70%;  
+                margin:0 auto;  
+                height:35px;  
+                font-size:15pt;  
+                border-radius:5px;/*设置圆角样式*/  
+                border:0;  
+                padding-left:8px;  
+            }  
+            #vcode{  
+                height:35px;  
+                width:40%;  
+                font-size:15pt;  
+                margin-left:15%;  
+                border-radius:5px;  
+                border:0;  
+                padding-left:8px;  
+            }  
+            #code{  
+                color:#ffffff;/*字体颜色白色*/  
+                background-color:#000000;     
+                font-size:20pt;  
+                font-family:"华康娃娃体W5";  
+                padding:5px 35px 10px 35px;  
+                margin-left:5%;       
+                cursor:pointer;  
+            }  
+            #search_pass_link{  
+                width:70%;  
+                text-align:right;  
+                margin:0 auto;  
+                padding:5px;  
+            }  
+            /*层级选择器*/  
+            #search_pass_link a{  
+                color:#000000;  
+                text-decoration:none;                 
+            }  
+            /*伪类*/  
+            #search_pass_link a:hover{  
+                color:#ff0000;  
+                text-decoration:underline;  
+            }  
+            .btn{  
+                width:70%;  
+                margin-left:15%;  
+                height:40px;  
+                border:0;  
+                font-size:14pt;  
+                font-family;"微软雅黑";  
+                background-color:#FC5628;  
+                color:#ffffff;  
+                cursor:pointer;/*设置指针鼠标的样式*/  
+                border-radius:20px;/*设置圆角样式*/  
+                border:0;  
+            }     
+            #copyright{  
+                width:100%;  
+                text-align:center;  
+                padding-top:20px;  
+                font-family:"微软雅黑";  
+                color:#e0e0e0;  
+            }  
+        </style>  
+    </head>  
+    <body leftmargin="0" onload="changeImg()">  
+        <div class="main_bar">   
+            <div id="login_form">  
+                <div class="title">  
+                    谷小浩                  
+                </div>      
+                <form action="main.html" onsubmit="return check()">  
+                <div id="form_widget">  
+                    <br>  
+                    <input type="text" placeholder="请输入账号" id="box_name" class="txt" value="guhao" onfocus="this.value=''" onblur="if(this.value=='')this.value='用户名'"/>  
+                    <br>  
+                    <input type="password" placeholder="请输入密码" id="box_pass" class="txt" value="test" onfocus="this.value=''" onblur="if(this.value=='')this.value='password'"/>  
+                    <br>  
+                    <input type="text" id="vcode" placeholder="验证码" value="验证码" onfocus="this.value=''" onblur="if(this.value=='')this.value='验证码'"/><span id="code" title="看不清，换一张"></span>  
+                    <div id="search_pass_link">  
+                        <a href="#">忘记密码？</a>  
+                    </div>                      
+                    <input  type="submit" value="登录" class="btn" onmouseover="this.style.backgroundColor='#FF8D00'" onmouseout="this.style.backgroundColor='#FC5628'">  
+                    <br>  
+                    <div id="copyright">  
+                        Power By GH &copy;CopyRight 2018  
+                    </div>  
+                </div>  
+                </form>  
+            </div>  
+        </div>      
+    </body>     
+    <script type="text/javascript">  
+        var code;//声明一个变量用于存储生成的验证码  
+        document.getElementById("code").onclick=changeImg;  
+        function changeImg(){  
+            //alert("换图片");  
+            var arrays=new Array(  
+                '1','2','3','4','5','6','7','8','9','0',  
+                'a','b','c','d','e','f','g','h','i','j',  
+                'k','l','m','n','o','p','q','r','s','t',  
+                'u','v','w','x','y','z',  
+                'A','B','C','D','E','F','G','H','I','J',  
+                'K','L','M','N','O','P','Q','R','S','T',  
+                'U','V','W','X','Y','Z'               
+            );  
+            code='';//重新初始化验证码  
+            //alert(arrays.length);  
+            //随机从数组中获取四个元素组成验证码  
+            for(var i=0;i<6;i++){  
+            //随机获取一个数组的下标  
+                var r=parseInt(Math.random()*arrays.length);  
+                code+=arrays[r];  
+                //alert(arrays[r]);  
+            }  
+            //alert(code);  
+            document.getElementById('code').innerHTML=code;//将验证码写入指定区域  
+        }         
+          
+        //效验验证码(表单被提交时触发)  
+        function check(){  
+            //获取用户输入的验证码  
+            var input_code=document.getElementById('vcode').value;  
+            //alert(input_code+"----"+code);  
+            if(input_code.toLowerCase()==code.toLowerCase())  
+            {  
+                //验证码正确(表单提交)  
+                return true;  
+            }  
+            alert("请输入正确的验证码!");  
+            //验证码不正确,表单不允许提交  
+            return false;  
+        }  
 
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="姿美堂CRM后台管理系统，CRM管理系统，CRM">
-		<meta name="author" content="JSL,XB,CR">
-		<title>姿美汇App后台管理系统</title>
-		<link rel="shortcut icon" type="image/x-icon" href="../img/mei.png?v= cd35e2b">
-		<link rel="icon" sizes="any" mask="" href="../img/mei.png?v= cd35e2b">
-		<link rel="stylesheet" type="text/css" href="../lisp/bootstrap.min.css?v= c79be45" />
-		<link rel="stylesheet" type="text/css" href="../lisp/metisMenu.min.css?v= bb3f6f8" />
-		<link rel="stylesheet" type="text/css" href="../lisp/sb-admin-2.min.css?v= 907d8af" />
-		<link rel="stylesheet" type="text/css" href="../lisp/font-awesome.min.css.css?v= 2f0fc3b" />
-		<link rel="stylesheet" type="text/css" href="../css/login.css?v= 3ef079" />
-	</head>
-
-	<body style="margin:0px;position:relative;">
-		<div class="container" style="position:absolute;top:20px;right:20px;z-index:999;">
-			<div class="login">
-				<div class="logo"><img src="../img/login_logo.png?v= 9613852" alt="" /></div>
-				<div class="dl_ul">
-					<ul>
-						<li>
-							<h1>姿美汇App后台管理系统</h1></li>
-						<li>用户名:<input placeholder="请输入用户名" type="text" name="adminName" id="adminName" value="姿美汇App后台管理" readonly="readonly" /></li>
-						<li>密<b class="zw"></b>码:<input type="password" placeholder="请输入密码" name="password" id="password" value="QWSAZX56kl"/></li>
-						<li><span id="cwts" class="vhide">密码不正确，请重新输入</span></li>
-						<li><button onclick="submitIt()" id="subBtn">登录</button></li>
-						<div class="form-group">
-							<span class="col-xs-3"></span>
-							<div class="col-xs-8">
-								<span class="text-danger"></span>
-							</div>
-						</div>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<script src="../lisp/jquery-3.1.0.min.js?v= 05e51b1" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/constant.js?v= 7f4acdb" type="text/javascript" charset="utf-8"></script>
-		<script src="../lisp/bootstrap.min.js?v= 281cd50" type="text/javascript" charset="utf-8"></script>
-		<script src="../lisp/metisMenu.min.js?v= 9d596cd" type="text/javascript" charset="utf-8"></script>
-		<script src="../lisp/sb-admin-2.min.js?v= 1a996cc" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/logoIn.js?v= 9fd77" type="text/javascript" charset="utf-8"></script>
-	</body>
-
-</html>
+    </script>   
+</html>  
