@@ -1,1 +1,250 @@
-1
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="姿美堂CRM后台管理系统，CRM管理系统，CRM">
+    <meta name="author" content="JSL,XB,YSY,WD">
+    <title>谷小浩</title>
+    <link rel="shortcut icon" type="image/x-icon" href="image/zmt.png">
+    <link rel="icon" sizes="any" mask="" href="image/zmt.png">
+    <link rel="stylesheet" type="text/css" href="plug/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
+</head>
+
+<body style="margin:0px;position:relative;">
+    <iframe frameborder="no" border="0" id="animation" src="" style="width: 100%;height: 100%;padding: 0;margin: 0;">
+    </iframe>
+    <div class="container" style="position:absolute;top:20px;right:20px;z-index:999;">
+        <div class="login">
+            <div class="logo">
+                <span class="letter" data-letter="谷">谷</span>
+				<span class="letter" data-letter="小">小</span>
+                <span class="letter" data-letter="浩">浩</span>
+            </div>
+            <div class="dl_ul">
+                <ul>
+                    <li><i class="iconfont">&#xe646;</i>
+                        <select name="" id="tribe">
+                            <option value=""></option>
+                        </select>
+                    </li>
+                    <li><i class="iconfont">&#xe6cb;</i>
+                        <input type="text" name="adminName" id="adminName" placeholder="请输入用户名" />
+                    </li>
+                    <li><i class="iconfont">&#xe679;</i>
+                        <input type="password" name="password" id="password" placeholder="请输入密码" />
+                    </li>
+                    <li><span id="cwts" class="vhide">登录名为空或格式不正确！</span></li>
+                    <li>
+                        <button onclick="submitIt()" id="subBtn">登&nbsp;&nbsp;&nbsp;录</button>
+                    </li>
+                    <div class="form-group">
+                        <span class="col-xs-3"></span>
+                        <div class="col-xs-8">
+                            <span class="text-danger"></span>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <p style="color: #bbb;font-size: 12px;width: 100%;height: 35px;line-height: 35px;text-align: center;border-top:1px solid #bbb;position: absolute;left: 0 ;bottom: 0;margin-bottom: 0">Copyright© 2016 - 2018 </p>
+    <script src="plug/js/jquery-3.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/constant.js" type="text/javascript" charset="utf-8"></script>
+    <script src="plug/js/jquery.slimscroll.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    var arr = ["a8", "a10", "a13"]
+    var index = Math.round(Math.random() * 2)
+    $("#animation").attr('src', "http://www.jq22.com/js/" + arr[index] + ".html")
+
+
+    getTribe()
+
+    /*回车键提交*/
+    $("body").keydown(function() {
+        if (event.keyCode == "13") { //keyCode=13是回车键
+            submitIt();
+        }
+    });
+
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + "; " + expires;
+    }
+
+    function submitIt() {
+        var adminName = $("#adminName").val();
+        var password = $("#password").val();
+        var zoneName = $("#tribe").val();
+        if (adminName.trim() == "" || password.trim() == "") {
+            $("#cwts").removeClass("vhide").html("请输入用户名和密码");
+        } else {
+            $("#subBtn").html('登录中...').attr("disabled", true)
+            $("#cwts").addClass("vhide");
+            $.ajax({
+                type: "post",
+                async: true,
+                url: address + SERVICE.login,
+                data: {
+                    userName: adminName,
+                    zoneId: zoneName,
+                    password: password
+                },
+                dataType: "jsonp",
+                jsonp: "callback",
+                success: function(e) {
+                    if (e.status == "success") {
+                        var _id = e.data.employeeId;
+                        var _deptId = e.data.deptId;
+                        var _sgroupId = e.data.sgroupId;
+                        var _bigDeptId = e.data.bigDeptId;
+                        var _zoneId = e.data.zoneId;
+                        setCookie("id", _id, 30);
+                        setCookie("deptId", _deptId, 1);
+                        setCookie("sgroupId", _sgroupId, 1);
+                        setCookie("bigDeptId", _bigDeptId, 1);
+                        setCookie("zoneId", _zoneId, 1);
+                        localStorage.setItem("id", _id)
+                        $.ajax({
+                              type: "post",
+                              async: true,
+                              url: address + SERVICE.loginConfig,
+                              dataType: "jsonp",
+                              jsonp: "callback",
+                              success: function(e) {
+                                  var data = e.data.auths,
+                                  str = JSON.stringify(data);
+                                  localStorage.setItem("configArray", str)
+                                  localStorage.setItem("UID","")
+                                  localStorage.setItem("_deptId", _deptId)
+                                  localStorage.setItem("_bigDeptId", _bigDeptId)
+                                  
+                              }
+                          });
+
+                        $.ajax({
+                            type: "post",
+                            async: true,
+                            url: address + SERVICE.queryAuthByLogin,
+                            dataType: "jsonp",
+                            data: {
+                                parentId: 0
+                            },
+                            jsonp: "callback",
+                            success: function(e) {
+                                var data = e.data
+                                str = JSON.stringify(data);
+
+                                localStorage.setItem("firstAuthorityArray", str)
+                                goTowAuthority(data[0].authId)
+
+
+                                hrefUrl()
+
+                            }
+                        });
+
+
+
+
+
+                    } else {
+                        $("#cwts").removeClass("vhide").html(e.msg);
+                    }
+                    $("#subBtn").html('登<b style="visibility: hidden;">啊</b>录').attr("disabled", false)
+                },
+                error: function() {
+                    $("#subBtn").html('登<b style="visibility: hidden;">啊</b>录').attr("disabled", false)
+                }
+            });
+
+        }
+    }
+
+    
+    function goTowAuthority(id) {
+        navUlStr = ""
+
+        $.ajax({
+            type: "post",
+            async: true,
+            url: address + SERVICE.getTreeScAuth,
+            dataType: "jsonp",
+            data: {
+                parentId: id
+            },
+            jsonp: "callback",
+            success: function(e) {
+                var data = e.data
+                data = JSON.stringify(data);
+                localStorage.setItem("twoAuthorityList", data)
+               
+
+            }
+        });
+
+    }
+
+    function getTribe() {
+        $.ajax({
+            type: "post",
+            async: true,
+            url: address + SERVICE.listEffectiveZones,
+            data: {
+                zoneName: ""
+            },
+            dataType: "jsonp",
+            jsonp: "callback",
+            success: function(e) {
+                if (e.status == "success") {
+                    var data = e.data.zoneData
+                    var msg = ""
+                    for (var i in data) {
+                        msg += '<option value="' + data[i].id + '">' + data[i].zoneName + '</option>'
+                    }
+
+                    $("#tribe").html(msg)
+
+                } else {
+
+                }
+
+            },
+            error: function() {
+
+            }
+        });
+
+    }
+    /*根据用户权限获取首页地址*/
+    function hrefUrl() {
+        $.ajax({
+            type: "post",
+            async: true,
+            url: address + SERVICE.getRolePageUrl,
+            dataType: "jsonp",
+            jsonp: "callback",
+            success: function(e) {
+               
+                window.location.href = e.url;
+
+            },
+
+            error: function() {
+
+            }
+        })
+
+
+    }
+    </script>
+</body>
+
+</html>
