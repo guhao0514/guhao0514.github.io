@@ -1,403 +1,175 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta charset="utf-8" />
-    <title>谷小浩</title>
-    <link href="http://hovertree.com/texiao/html5/index/hovertreewelcome.css" type="text/css" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>主菜单</title><base target="_blank" />
+<link href="http://hovertree.com/texiao/css3/44/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://hovertree.com/texiao/css3/44/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="http://hovertree.com/texiao/css3/44/css/hewenqi.css">
+<style type="text/css">
+	.demo{
+		padding: 2em 0;
+		transform: translate3d(0, 0, 0);
+	}
+	.navbar{
+		width: 150px;
+		height: 150px;
+		line-height: 150px;
+		border-radius: 50%;
+		background: #fff;
+		margin: 70px auto;
+		position: relative;
+		cursor: pointer;
+		text-align: center;
+		font-size: 1.75em;
+		font-weight: bold;
+		color: #99b977;
+		transition: 0.24s 0.2s;
+	}
+	.navbar:hover{
+		background: rgba(255, 255, 255, 0.75);
+	}
+	.navbar .menu{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		position: absolute;
+		top: -75px;
+		left: -75px;
+		border: 150px solid transparent;
+		cursor: default;
+		border-radius: 50%;
+		transform: scale(0);
+		transition: transform 1.4s 0.07s;
+		z-index: -1;
+	}
+	.navbar:hover .menu{
+		transition: transform 0.4s 0.08s, z-index   0s  0.5s;
+		transform: scale(1);
+		z-index: 1;
+	}
+	.navbar .menu li{
+		position: absolute;
+		top: -100px;
+		left: -100px;
+		transform-origin: 100px 100px;
+		transition: all 0.5s 0.1s;
+	}
+	.navbar:hover .menu li{
+		transition: all 0.6s;
+	}
+	.navbar .menu li a{
+		width: 45px;
+		height: 45px;
+		line-height: 45px;
+		border-radius: 50%;
+		background: #fff;
+		position: absolute;
+		font-size: 60%;
+		color: #99b977;
+		transition: 0.6s;
+	}
+	.navbar:hover .menu li:nth-child(1){
+		transition-delay: 0.02s;
+		transform: rotate(85deg);
+	}
+	.navbar:hover .menu li:nth-child(1) a{
+		transition-delay: 0.04s;
+		transform: rotate(635deg);
+	}
+	.navbar:hover .menu li:nth-child(2){
+		transition-delay: 0.04s;
+		transform: rotate(125deg);
+	}
+	.navbar:hover .menu li:nth-child(2) a{
+		transition-delay: 0.08s;
+		transform: rotate(595deg);
+	}
+	.navbar:hover .menu li:nth-child(3){
+		transition-delay: 0.06s;
+		transform: rotate(165deg);
+	}
+	.navbar:hover .menu li:nth-child(3) a{
+		transition-delay: 0.12s;
+		transform: rotate(555deg);
+	}
+	.navbar:hover .menu li:nth-child(4){
+		transition-delay: 0.08s;
+		transform: rotate(205deg);
+	}
+	.navbar:hover .menu li:nth-child(4) a{
+		transition-delay: 0.16s;
+		transform: rotate(515deg);
+	}
+	.navbar:hover .menu li:nth-child(5){
+		transition-delay: 0.1s;
+		transform: rotate(245deg);
+	}
+	.navbar:hover .menu li:nth-child(5) a{
+		transition-delay: 0.2s;
+		transform: rotate(475deg);
+	}
+	.navbar:hover .menu li:nth-child(6){
+		transition-delay: 0.12s;
+		transform: rotate(285deg);
+	}
+	.navbar:hover .menu li:nth-child(6) a{
+		transition-delay: 0.24s;
+		transform: rotate(435deg);
+	}
+	.navbar:hover .menu li:nth-child(7){
+		transition-delay: 0.14s;
+		transform: rotate(325deg);
+	}
+	.navbar:hover .menu li:nth-child(7) a{
+		transition-delay: 0.28s;
+		transform: rotate(395deg);
+	}
+	.navbar:hover .menu li:nth-child(8){
+		transition-delay: 0.16s;
+		transform: rotate(365deg);
+	}
+	.navbar:hover .menu li:nth-child(8) a{
+		transition-delay: 0.32s;
+		transform: rotate(355deg);
+	}
+	.navbar:hover .menu li:nth-child(9){
+		transition-delay: 0.18s;
+		transform: rotate(405deg);
+	}
+	.navbar:hover .menu li:nth-child(9) a{
+		transition-delay: 0.36s;
+		transform: rotate(315deg);
+	}
+</style>
 </head>
-<body ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" onselectstart="event.returnValue=false">
-
-    <div id="hovertreecontainer">
-
-        <div>
-            <h1 id="h1">test1</h1>
-            <h2 id="h2"> test2</h2>
-            <h3 id="h2">test3
-            <p>&nbsp;</p>
-            <p><strong><a href="time.html">查看当前时间</a></strong></p>
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
-        </div>
-
-    </div>
-
-    <canvas id="canvas"></canvas>
-    <audio autoplay="autoplay">
-        <source src="http://hovertree.com" type="audio/ogg">
-        <source src="http://down.hovertree.com/hovertreesound/hovertreexihuanni.mp3" type="audio/mpeg">
-        您的浏览器不支持播放音乐。请用支持html5的浏览器打开,例如chrome或火狐或者新版IE等。
-    </audio><script type="text/javascript" src="http://hovertree.com/texiao/html5/index/hovertreewelcome.js">
-    </script>
-    <script type="text/javascript">
-
-        ; (function (window) {
-
-            var ctx,
-                hue,
-                logo,
-                form,
-                buffer,
-                target = {},
-                tendrils = [],
-                settings = {};
-
-            settings.debug = true;
-            settings.friction = 0.5;
-            settings.trails = 20;
-            settings.size = 50;
-            settings.dampening = 0.25;
-            settings.tension = 0.98;
-
-            Math.TWO_PI = Math.PI * 2;
-
-            // ========================================================================================
-            // Oscillator 
-            // ----------------------------------------------------------------------------------------
-
-            function Oscillator(options) {
-                this.init(options || {});
-            }
-
-            Oscillator.prototype = (function () {
-
-                var value = 0;
-
-                return {
-
-                    init: function (options) {
-                        this.phase = options.phase || 0;
-                        this.offset = options.offset || 0;
-                        this.frequency = options.frequency || 0.001;
-                        this.amplitude = options.amplitude || 1;
-                    },
-
-                    update: function () {
-                        this.phase += this.frequency;
-                        value = this.offset + Math.sin(this.phase) * this.amplitude;
-                        return value;
-                    },
-
-                    value: function () {
-                        return value;
-                    }
-                };
-
-            })();
-
-            // ========================================================================================
-            // Tendril hovertree.com
-            // ----------------------------------------------------------------------------------------
-
-            function Tendril(options) {
-                this.init(options || {});
-            }
-
-            Tendril.prototype = (function () {
-
-                function Node() {
-                    this.x = 0;
-                    this.y = 0;
-                    this.vy = 0;
-                    this.vx = 0;
-                }
-
-                return {
-
-                    init: function (options) {
-
-                        this.spring = options.spring + (Math.random() * 0.1) - 0.05;
-                        this.friction = settings.friction + (Math.random() * 0.01) - 0.005;
-                        this.nodes = [];
-
-                        for (var i = 0, node; i < settings.size; i++) {
-
-                            node = new Node();
-                            node.x = target.x;
-                            node.y = target.y;
-
-                            this.nodes.push(node);
-                        }
-                    },
-
-                    update: function () {
-
-                        var spring = this.spring,
-                            node = this.nodes[0];
-
-                        node.vx += (target.x - node.x) * spring;
-                        node.vy += (target.y - node.y) * spring;
-
-                        for (var prev, i = 0, n = this.nodes.length; i < n; i++) {
-
-                            node = this.nodes[i];
-
-                            if (i > 0) {
-
-                                prev = this.nodes[i - 1];
-
-                                node.vx += (prev.x - node.x) * spring;
-                                node.vy += (prev.y - node.y) * spring;
-                                node.vx += prev.vx * settings.dampening;
-                                node.vy += prev.vy * settings.dampening;
-                            }
-
-                            node.vx *= this.friction;
-                            node.vy *= this.friction;
-                            node.x += node.vx;
-                            node.y += node.vy;
-
-                            spring *= settings.tension;
-                        }
-                    },
-
-                    draw: function () {
-
-                        var x = this.nodes[0].x,
-                            y = this.nodes[0].y,
-                            a, b;
-
-                        ctx.beginPath();
-                        ctx.moveTo(x, y);
-
-                        for (var i = 1, n = this.nodes.length - 2; i < n; i++) {
-
-                            a = this.nodes[i];
-                            b = this.nodes[i + 1];
-                            x = (a.x + b.x) * 0.5;
-                            y = (a.y + b.y) * 0.5;
-
-                            ctx.quadraticCurveTo(a.x, a.y, x, y);
-                        }
-
-                        a = this.nodes[i];
-                        b = this.nodes[i + 1];
-
-                        ctx.quadraticCurveTo(a.x, a.y, b.x, b.y);
-                        ctx.stroke();
-                        ctx.closePath();
-                    }
-                };
-
-            })();
-
-            // ----------------------------------------------------------------------------------------
-
-            function init(event) {
-
-                document.removeEventListener('mousemove', init);
-                document.removeEventListener('touchstart', init);
-
-                document.addEventListener('mousemove', mousemove);
-                document.addEventListener('touchmove', mousemove);
-                document.addEventListener('touchstart', touchstart);
-
-                mousemove(event);
-                reset();
-                loop();
-            }
-
-            function reset() {
-
-                tendrils = [];
-
-                for (var i = 0; i < settings.trails; i++) {
-
-                    tendrils.push(new Tendril({
-                        spring: 0.45 + 0.025 * (i / settings.trails)
-                    }));
-                }
-            }
-
-            function loop() {
-
-                if (!ctx.running) return;
-
-                ctx.globalCompositeOperation = 'source-over';
-                ctx.fillStyle = 'rgba(8,5,16,0.4)';
-                ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-                ctx.globalCompositeOperation = 'lighter';
-                ctx.strokeStyle = 'hsla(' + Math.round(hue.update()) + ',90%,50%,0.25)';
-                ctx.lineWidth = 1;
-
-                if (ctx.frame % 60 == 0) {
-                    console.log(hue.update(), Math.round(hue.update()), hue.phase, hue.offset, hue.frequency, hue.amplitude);
-                }
-
-                for (var i = 0, tendril; i < settings.trails; i++) {
-                    tendril = tendrils[i];
-                    tendril.update();
-                    tendril.draw();
-                }
-
-                ctx.frame++;
-                ctx.stats.update();
-                requestAnimFrame(loop);
-            }
-
-            function resize() {
-                ctx.canvas.width = window.innerWidth;
-                ctx.canvas.height = window.innerHeight;
-            }
-
-            function start() {
-                if (!ctx.running) {
-                    ctx.running = true;
-                    loop();
-                }
-            }
-
-            function stop() {
-                ctx.running = false;
-            }
-
-            function mousemove(event) {
-                if (event.touches) {
-                    target.x = event.touches[0].pageX;
-                    target.y = event.touches[0].pageY;
-                } else {
-                    target.x = event.clientX
-                    target.y = event.clientY;
-                }
-                event.preventDefault();
-            }
-
-            function touchstart(event) {
-                if (event.touches.length == 1) {
-                    target.x = event.touches[0].pageX;
-                    target.y = event.touches[0].pageY;
-                }
-            }
-
-            function keyup(event) {
-
-                switch (event.keyCode) {
-                    case 32:
-                        save();
-                        break;
-                    default:
-                        // console.log(event.keyCode); hovertree.com
-                }
-            }
-
-            function letters(id) {
-
-                var el = document.getElementById(id),
-                    letters = el.innerHTML.replace('&amp;', '&').split(''),
-                    heading = '';
-
-                for (var i = 0, n = letters.length, letter; i < n; i++) {
-                    letter = letters[i].replace('&', '&amp');
-                    heading += letter.trim() ? '<span class="letter-' + i + '">' + letter + '</span>' : '&nbsp;';
-                }
-
-                el.innerHTML = heading;
-                setTimeout(function () {
-                    el.className = 'transition-in';
-                }, (Math.random() * 500) + 500);
-            }
-
-            function save() {
-
-                if (!buffer) {
-
-                    buffer = document.createElement('canvas');
-                    buffer.width = screen.availWidth;
-                    buffer.height = screen.availHeight;
-                    buffer.ctx = buffer.getContext('2d');
-
-                    form = document.createElement('form');
-                    form.method = 'post';
-                    form.input = document.createElement('input');
-                    form.input.type = 'hidden';
-                    form.input.name = 'data';
-                    form.appendChild(form.input);
-
-                    document.body.appendChild(form);
-                }
-
-                buffer.ctx.fillStyle = 'rgba(8,5,16)';
-                buffer.ctx.fillRect(0, 0, buffer.width, buffer.height);
-
-                buffer.ctx.drawImage(canvas,
-                    Math.round(buffer.width / 2 - canvas.width / 2),
-                    Math.round(buffer.height / 2 - canvas.height / 2)
-                );
-
-                buffer.ctx.drawImage(logo,
-                    Math.round(buffer.width / 2 - logo.width / 4),
-                    Math.round(buffer.height / 2 - logo.height / 4),
-                    logo.width / 2,
-                    logo.height / 2
-                );
-
-                window.open(buffer.toDataURL(), 'wallpaper', 'top=0,left=0,width=' + buffer.width + ',height=' + buffer.height);
-
-                // form.input.value = buffer.toDataURL().substr(22);
-                // form.submit(); hovertree.com
-            }
-
-            window.requestAnimFrame = (function () {
-                return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (fn) { window.setTimeout(fn, 1000 / 60) };
-            })();
-
-            window.onload = function () {
-
-                ctx = document.getElementById('canvas').getContext('2d');
-                ctx.stats = new Stats();
-                ctx.running = true;
-                ctx.frame = 1;
-
-                logo = new Image();
-                logo.src = 'ht' + 'tp://ho' + 'vertree.c' + 'om/themes/hvtimages/hvtlogo.p' + 'ng';
-
-                hue = new Oscillator({
-                    phase: Math.random() * Math.TWO_PI,
-                    amplitude: 85,
-                    frequency: 0.0015,
-                    offset: 285
-                });
-
-                letters('h1');
-                letters('h2');
-
-                document.addEventListener('mousemove', init);
-                document.addEventListener('touchstart', init);
-                document.body.addEventListener('orientationchange', resize);
-                window.addEventListener('resize', resize);
-                window.addEventListener('keyup', keyup);
-                window.addEventListener('focus', start);
-                window.addEventListener('blur', stop);
-
-                resize();
-
-                if (window.DEBUG) {
-
-                    var gui = new dat.GUI();
-
-                    // gui.add(settings, 'debug');
-                    settings.gui.add(settings, 'trails', 1, 30).onChange(reset);
-                    settings.gui.add(settings, 'size', 25, 75).onFinishChange(reset);
-                    settings.gui.add(settings, 'friction', 0.45, 0.55).onFinishChange(reset);
-                    settings.gui.add(settings, 'dampening', 0.01, 0.4).onFinishChange(reset);
-                    settings.gui.add(settings, 'tension', 0.95, 0.999).onFinishChange(reset);
-
-                    document.body.appendChild(ctx.stats.domElement);
-                }
-            };
-
-        })(window);
-
-    </script>
-
-    <div style="display:none">
-        <script type="text/javascript">
-            document.write('<scr' + 'ipt type="text/javascript" src="/themes/tj/btj.js"></scr' + 'ipt>');
-        </script>
-    </div><script src="/themes/hvt/js/ggtj.js"></script>
-<script src="/themes/hvt/js/texiao.js"></script>
+<body>
+<div class="demo">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="navbar">主菜单
+					<ul class="menu">
+						<li><a href="time.html" class="fa fa-facebook"></a>time</li>
+						<li><a href="xuanku.html" class="fa fa-google-plus"></a>xuanku</li>
+						<li><a href="http://hovertree.com/h/bjaf/28bhvmmu.htm" class="fa fa-twitter"></a></li>
+						<li><a href="http://hovertree.com/h/bjag/ajaxmvc.htm" class="fa fa-linkedin"></a></li>
+						<li><a href="http://hovertree.com/h/bjag/o46xlsnm.htm" class="fa fa-pinterest"></a></li>
+						<li><a href="http://hovertree.com/h/bjag/toiq32dh.htm" class="fa fa-rss"></a></li>
+						<li><a href="http://hovertree.com/h/bjaf/aqm3qaed.htm" class="fa fa-instagram"></a></li>
+						<li><a href="http://hovertree.com/h/bjaf/c2c0k0tf.htm" class="fa fa-skype"></a></li>
+						<li><a href="http://hovertree.com/h/bjaf/ati6k7yk.htm" class="fa fa-github"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>来源：<a href="index.html" target="_blank">谷浩</a></p>
+</div>
 </body>
 </html>
