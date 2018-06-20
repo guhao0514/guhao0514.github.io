@@ -4,7 +4,7 @@ body, h2, p {
 }
 
 body {
-	background: url("http://hovertree.com/texiao/css/14/hovertreepic/06.jpg") no-repeat;
+	background: url("image/电子书003.jpg") no-repeat;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -15,7 +15,7 @@ body {
 }
 a{color:yellow;}
 #shineflip {
-	/*background: url("images/logo.jpg") no-repeat;*/
+	/*background: url("image/电子书003.jpg") no-repeat;*/
 	-o-background-size: 100% 100%;	
 	-webkit-background-size: 100% 100%;
 	-moz-background-size: 100% 100%;
