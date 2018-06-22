@@ -1,47 +1,34 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>谷小浩</title>
-    <link rel="stylesheet" href="http://hovertree.com/texiao/jquery/86/css/GalMenu.css" />
-    <script src="http://down.hovertree.com/jquery/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" src="http://hovertree.com/texiao/jquery/86/js/GalMenu.js"></script>
-    <script type="text/javascript">
-$(document).ready(function() {
-        $('body').GalMenu({
-          'menu': 'GalDropDown'
-        })
-      });
-    </script>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>星系轨道旋转-谷小浩</title>
+    <link rel="stylesheet" type="text/css" href="http://hovertree.com/texiao/css3/24/css/css.css">
 </head>
 <body>
-    <div class="GalMenu GalDropDown">
-        <div class="circle" id="gal">
-            <div class="ring">
-                <a href="xuanku.html" title="首页" class="menuItem">炫酷</a>
-                <a href="time.html" target="_blank" title="博客" class="menuItem">时间</a>
-                <a href="fengshan.html" target="_blank" title="" class="menuItem">风车</a>
-                <a href="xingjiguidao.html" target="_blank" title="" class="menuItem">星际</a>
-                <a href="run.html" target="_blank" title="" class="menuItem">奔跑</a>
-                <a href="test.html" target="_blank" title="留言" class="menuItem">图片</a>
+    <div class="ui_base u_p3d">
+        <div class="ball_c">谷小浩</div>
+        <div class="base u_p3d">
+            <div class="pan"></div>
+            <div class="ball_base u_p3d ball_1">
+                <div class="ball">test1</div>
             </div>
-            <audio id="audio" src="http://cms.hovertree.com/hovertreesound/hovertreeright.mp3"></audio>
+            <div class="ball_base u_p3d ball_2">
+                <div class="ball">test2</div>
+            </div>
+            <div class="ball_base u_p3d ball_3">
+                <div class="ball">test3</div>
+            </div>
+            <div class="ball_base u_p3d ball_4">
+                <div class="ball">test4</div>
+            </div>
+            <div class="ball_base u_p3d ball_5">
+                <div class="ball">test5</div>
+            </div>
+            <div class="ball_base u_p3d ball_6">
+                <div class="ball">test6</div>
+            </div>
         </div>
-    </div>
-    <div id="overlay" style="opacity: 1; cursor: pointer;"></div>
-    <script type="text/javascript">
-var items = document.querySelectorAll('.menuItem');
-      for (var i = 0,
-      l = items.length; i < l; i++) {
-        items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
-        items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
-      }
-    </script>
-    <div class="container">
-        <h1>鼠标请点击右键</h1>
-        <h1>手机请长按屏幕</h1>
     </div>
 </body>
 </html>
