@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>💞ღஐ关微</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" >
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js" ></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+<div class="container">
+    <div class="row col-md-3"></div>
+    <div class="row col-md-6" >
+        <div class="row question">
+            <div class="col-md-6 col-xs-12">
+                <p style="line-height: 50px;font-size: 10px;">“小哥哥，我观察你很久了”</p>
+                <p style="line-height: 50px;font-size: 20px;">做我老公好不好？</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <img src="image/test1首页.png" alt="" style="height: 200px;">
+            </div>
+        </div>
+        <div class="row question" style="margin-top: 20px;">
+            <div class="col-md-6 col-xs-6" style="text-align: center;">
+                <button type="button" class="btn btn-success" style="width: 80%" id="no">好</button>
+            </div>
+            <div class="col-md-6 col-xs-6" style="text-align: center;">
+                <button type="button" class="btn btn-danger" style="width: 80%" id="ok">不好</button>
+            </div>
+        </div>
+        <div class="col-md-12 col-xs-12 hide" id="success">
+            <img src="image/yangshengchan.jpg" alt="" style="width: 100%;">
+        </div>
+    </div>
+
+    <div class="row col-md-3"></div>
+
+</div>
+<script>
+    var i=1;
+    var ok=false;
+    $(document).ready(function(){
+        $("#no").click(function(){
+            alert("真的吗？你答应了？");
+            alert("给我发消息吧，爱你");
+            $(".question").addClass('hide');
+            $("#success").removeClass('hide');
+            ok=true;
+        });
+        $("#ok").click(function(){
+            switch(i){
+                case 1:
+                    alert("工资都给我");
+                    break;
+				case 2:
+                    alert("家务活你全包");
+                    break;
+                case 3:
+                    alert("我还有个女儿，买一送一");
+                    break;
+				case 4:
+                    alert("不跟你吵架，会撒娇 会卖萌");
+                    break;	
+                default:
+                    alert("答应我吧");
+            }
+            i++;
+        });
+    });
+</script>
+</body>
+<br><br><br><br><br><br>
+        <div id="copyright">
+            <center>作者: <a href="http://www.guxiaohao.com/">谷小浩</a><br /></center>
+			<center><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1271304958'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1271304958%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script></center>
+        </div>
+</html>
