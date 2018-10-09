@@ -161,9 +161,9 @@
 //顶部标题文字切换
 	$("#header_p").mouseover(function(){
 		$("#header_p1").html("Resume");
-		$("#header_p2").html("前端测试工程师");
+		$("#header_p2").html("测试工程师");
 	}).mouseout(function(){
-		$("#header_p1").html("谷小浩");
+		$("#header_p1").html("谷浩");
 		$("#header_p2").html("个人简历");	
 	});
 //顶部导航取消
