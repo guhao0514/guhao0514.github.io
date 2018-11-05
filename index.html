@@ -1,114 +1,60 @@
-<!DOCTYPE html>
+
+<!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <title>ஐღ谷小浩ஐღ</title><base target="_blank" />
-<link rel="stylesheet" type="text/css" href="guxiaohao.css">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>手机移动端可滚动的导航代码</title>
+
+<link rel="stylesheet" type="text/css" href="http://gmu.baidu.com/demo/assets/reset.css" />
+
+
+<link rel="stylesheet" type="text/css" href="css/widget/navigator/navigator.css" />
+<link rel="stylesheet" type="text/css" href="css/widget/navigator/navigator.iscroll.css" />
+<link rel="stylesheet" type="text/css" href="css/widget/navigator/navigator.default.css" />
+<link rel="stylesheet" type="text/css" href="css/widget/navigator/navigator.iscroll.default.css" />
+
+
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript" src="js/zepto.extend.js"></script>
+<script type="text/javascript" src="js/zepto.ui.js"></script>
+<script type="text/javascript" src="js/zepto.iscroll.js"></script>
+<script type="text/javascript" src="js/widget/navigator.js"></script>
+<script type="text/javascript" src="js/widget/navigator.iscroll.js"></script>
+
 </head>
 <body>
-<div class="nav-main">
-<div class="nav-box">
-<div class="nav">
-  <ul class="nav-ul">
-  	<li><a href="http://www.guxiaohao.com/zmt/wenti.html" class="home"><span>线上问题</span></a></li>
-<!--   	<li><a href="http://www.guxiaohao.com/Test/Test.html" class="develop"><span>测试进度</span></a></li> -->
- <!-- 	<li><a href="http://www.guxiaohao.com/resume.html" class="wechat"><span>小组日报</span></a></li> -->
- <!-- 	<li><a href="http://www.guxiaohao.com/resume.html" class="case"><span>项目分工</span></a></li>  -->
- <!--   	<li><a href="http://www.guxiaohao.com/zmt/gongzuo.html" class="news"><span>工作注意事项</span></a></li> -->
-   	<li><a href="http://www.guxiaohao.com/zmt/zanweikaifa.html" class="contact"><span>项目笔记</span></a></li> 
-	</br>	</br>	</br>
-        <div id="copyright">
-            <center> <a href="http://www.guxiaohao.com/">作者:谷小浩</a><br /></center>
-				</br>	
-			<center><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1271304958'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1271304958%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script></center>
-        </div>
-  </ul>
+<div id="nav-smartSetup">
+<ul>
+<li><a href="#">要闻</a></li>
+<li><a href="#">国内</a></li>
+<li><a href="#">国际</a></li>
+<li><a href="#">军事</a></li>
+<li><a href="#">社会</a></li>
+<li><a href="#">娱乐</a></li>
+<li><a href="#">女人</a></li>
+<li><a href="#">体育</a></li>
+<li><a href="#">科技</a></li>
+<li><a href="#">互联网</a></li>
+<li><a href="#">教育</a></li>
+<li><a class="cur" href="#">财经</a></li>
+<li><a href="#">房产</a></li>
+<li><a href="#">汽车</a></li>
+</ul>
 </div>
-<div class="nav-slide">
-    <div class="nav-slide-o"></div>
- <!--    <div class="nav-slide-o">
-    	<ul>
-    		<li><a href="http://www.guxiaohao.com/zmt/jindu/jindu1016.html"><span>10.16</span></a></li>
-    		<li><a href="http://www.guxiaohao.com/zmt/jindu/jindu1017.html"><span>10.17</span></a></li>
-    		<li><a href="http://www.guxiaohao.com/zmt/jindu/zanweikaifa.html"><span>10.18</span></a></li>
-    		<li><a href="http://www.guxiaohao.com/zmt/jindu/zanweikaifa.html"><span>10.19</span></a></li>
-    		<li><a href="http://www.guxiaohao.com/zmt/jindu/zanweikaifa.html"><span>10.20</span></a></li>
-    	</ul>
-    </div>
-    <div class="nav-slide-o">
-    	<ul>
-    		<li><a href="http://www.guxiaohao.com/"><span>10.16</span></a></li>
-    		<li><a href="http://www.guxiaohao.com/"><span>10.17</span></a></li>
-    		<li><a href="http://www.guxiaohao.com/"><span>10.18</span></a></li>
-    		<li><a href="http://www.guxiaohao.com/"><span>10.19</span></a></li>
-    		<li><a href="http://www.guxiaohao.com/"><span>10.20</span></a></li>
-    		<li><a href="http://www.guxiaohao.com/"><span>10.21</span></a></li>
-    		<li><a href="http://www.guxiaohao.com/"><span>10.22</span></a></li>
-    		<li><a href="http://www.guxiaohao.com/"><span>10.23</span></a></li>
-    	</ul>
-    </div>
-
-    <div class="nav-slide-o">
-    	<ul>
-    		<li><a href="http://www.guxiaohao.com/zmt/ribao/jindu1016.html"><span>10.16</span></a></li>
-    		<li><a href="http://www.guxiaohao.com/zmt/ribao/jindu1017.html"><span>10.17</span></a></li>
-    		<li><a href="http://www.guxiaohao.com/zmt/ribao/zanweikaifa.html"><span>10.18</span></a></li>
-    		<li><a href="http://www.guxiaohao.com/zmt/ribao/zanweikaifa.html"><span>10.19</span></a></li>
-    		<li><a href="http://www.guxiaohao.com/zmt/ribao/zanweikaifa.html"><span>10.20</span></a></li>
-    	</ul>
-    </div>
-   <div class="nav-slide-o">
-    	<ul>
-    		<li><a href="http://www.guxiaohao.com/zmt/ribao/jindu1016.html"><span>10.16</span></a></li>
-    		<li><a href="http://www.guxiaohao.com/zmt/ribao/jindu1017.html"><span>10.17</span></a></li>
-    		<li><a href="http://www.guxiaohao.com/zmt/ribao/zanweikaifa.html"><span>10.18</span></a></li>
-    		<li><a href="http://www.guxiaohao.com/zmt/ribao/zanweikaifa.html"><span>10.19</span></a></li>
-    		<li><a href="http://www.guxiaohao.com/zmt/ribao/zanweikaifa.html"><span>10.20</span></a></li>
-    	</ul>
-    </div>
-<-->
-    <div class="nav-slide-o"></div>
-</div>
-</div>
-</div>
-
-<script type="text/javascript" src="guxiaohao.js"></script>
 <script type="text/javascript">
-	$(function(){
-	var thisTime;
-	$('.nav-ul li').mouseleave(function(even){
-			thisTime	=	setTimeout(thisMouseOut,1000);
-	})
-
-	$('.nav-ul li').mouseenter(function(){
-		clearTimeout(thisTime);
-		var thisUB	=	$('.nav-ul li').index($(this));
-		if($.trim($('.nav-slide-o').eq(thisUB).html()) != "")
-		{
-			$('.nav-slide').addClass('hover');
-			$('.nav-slide-o').hide();
-			$('.nav-slide-o').eq(thisUB).show();
-		}
-		else{
-			$('.nav-slide').removeClass('hover');
-		}
-		
-	})
-	
-	function thisMouseOut(){
-		$('.nav-slide').removeClass('hover');
-	}
-	 
-	$('.nav-slide').mouseenter(function(){
-		clearTimeout(thisTime);
-		$('.nav-slide').addClass('hover');
-	})
-	$('.nav-slide').mouseleave(function(){
-		$('.nav-slide').removeClass('hover');
-	})
-})
+    (function () {
+        /*组件初始化js begin*/
+        $('#nav-smartSetup').navigator();    //smart setup方式创建 推荐方式
+    })();
 </script>
+<style type="text/css">
+.my_info{ margin:30px;}
+.my_info p{ text-align:center; font:normal 12px/30px 'MicroSoft YaHei';}
+</style>
+<div class="my_info">
+<p><p>手机移动端可滚动的导航代码，支持iOS，Android（暂不支持WP）等系统以webkit为内核的浏览器，建议在PC端使用以webkit为内核的浏览器（如：Google Chrome）中缩小浏览器窗口宽度查看效果,PC端查看效果需要用鼠标按住导航拖动以模拟手机上手指拖动的效果。</p><p><br /></p><p>使用方法：</p><p>1.head区域引用样式文件avigator.css，navigator.iscroll.css，navigator.default.css，navigator.iscroll.default.css<br /></p><p>2.head区域引用JS文件zepto.js，zepto.extend.js，zepto.ui.js，zepto.iscroll.js，navigator.js，navigator.iscroll.js<br /></p><p>3.在你的文件中加入&lt;!-- 代码 开始 --&gt;&lt;!-- 代码 结束 --&gt;区域代码<br /></p><p>4.本代码中两种导航效果均需引用所有CSS,JS文件，如需修改样式，可去掉default相关样式文件</p></p>
+<p></p>
+</div>
 </body>
-
 </html>
