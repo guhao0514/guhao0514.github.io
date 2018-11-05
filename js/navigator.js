@@ -1,0 +1,13 @@
+(function($,undefined){var tmpl='<% for (var i=0, len=left.length; i<len; i++) { %>'
++'<a href="<%=left[i].url%>" class="ui-navigator-fix ui-navigator-fixleft"><%=left[i].text%></a>'
++'<% } %>'
++'<ul class="ui-navigator-list">'
++'<% for (var i=0, len=mid.length; i<len; i++) { %>'
++'<li><a href="<%=mid[i].url%>"><%=mid[i].text%></a></li>'
++'<% } %></ul>'
++'<% for (var i=0, len=right.length; i<len; i++) { %>'
++'<a href="<%=right[i].url%>" class="ui-navigator-fix ui-navigator-fixright"><%=right[i].text%></a>'
++'<% } %>';$.ui.define("navigator",{_data:{container:"",content:[],defTab:0,beforetabselect:null,tabselect:null},_create:function(){var me=this,data=me._data,$el=me.root(),container=$(data.container||document.body).get(0),tabObj={left:[],mid:[],right:[]},html;$.each(data.content,function(){tabObj[this.pos?this.pos:'mid'].push(this);});html=$.parseTpl(tmpl,tabObj)
+if($el){$el.append(html);(!$el.parent().length||container!==document.body)&&$el.appendTo(container);}else{me.root($("<div></div>").append(html)).appendTo(container);}},_setup:function(fullMode){var me=this,data=me._data,defTab=data.defTab,$el=me.root();if(!fullMode){$el.children('a').addClass('ui-navigator-fix');$el.children('ul').addClass('ui-navigator-list');}
+$el.find('a').each(function(i){defTab===0?$(this).hasClass('cur')&&(data.defTab=i):$(this).removeClass('cur');});},_init:function(){var me=this,data=me._data,$el=me.root(),content=data.content,$tabList=$el.find('a');$tabList.each(function(i){this.index=i;content.length&&content[i].attr&&$(this).attr(content[i].attr);});data._$tabList=$tabList;data._lastIndex=-1;$el.addClass('ui-navigator').on('click',$.proxy(me._switchTabHandler,me));me.switchTo(data.defTab,true);},_switchTabHandler:function(e){var me=this,target=e.target;$(target).closest('a').get(0)&&me.switchTo(target.index,false,e);return me;},switchTo:function(index,isDef,e){var me=this,data=me._data,lastIndex=data._lastIndex,$tabList=data._$tabList,beforeSelectEvent=$.Event('beforetabselect');me.trigger(beforeSelectEvent,[$tabList[index]]);if(beforeSelectEvent.defaultPrevented){e&&e.preventDefault();return me;};if(lastIndex==index){e&&e.preventDefault();return me;}
+lastIndex>=0&&$tabList.eq(lastIndex).removeClass("cur");$tabList.eq(index).addClass("cur");data._lastIndex=index;return me.trigger('tabselect',[$tabList.get(index),index]);},getCurTab:function(){var me=this,data=me._data,lastIndex=data._lastIndex;return{index:lastIndex,info:data._$tabList[lastIndex]}}});})(Zepto);
