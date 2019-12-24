@@ -1,14 +1,14 @@
     
 
-    //浠ヤ笅鐨刜is鏄痏intersect鐨勭缉鍐�
+    //以下的_is是_intersect的缩写
     var array_is_text;
     function init_intersect(){
-        // 鍒濆鍖栦袱涓猟iv鐨勯珮搴�
+        // 初始化两个div的高度
         $("#div_is_inner").css({"height":$(window).height()+"px"});
         $(".div_is_typed").css({"height":$(window).height()+"px"});
         $(".div_is_open_bg").css({"height":$(window).height()+"px"}); 
 
-        //璁剧疆鑷畾涔夎儗鏅�
+        //设置自定义背景
         $("#div_intersect").css({"height":$(window).height()+"px"});
         var start_bg_img=start_content['bg_img'];
         if(typeof(start_content['bg_style'])!='undefined' && start_content['bg_style']=='bg_custom'){
@@ -19,9 +19,9 @@
         
         var intersect_text=start_content['intersect_text']; 
         if(typeof(intersect_text)!='undefined' && intersect_text!=''){
-            array_is_text=[intersect_text];  //鍔犺浇鑷畾涔夊唴瀹�
-        }else{  //璁剧疆榛樿鍊�
-            array_is_text=['鎴戠煡閬撻亣瑙佷綘涓嶅鏄擄紝閿欒繃浼氬緢鍙儨锛屾垜涓嶅笇鏈涗綑鐢熼兘鏄洖蹇嗭紝鎴戞兂浣欑敓姣忓ぉ閮芥槸浣狅紝鎴戠埍浣犮€�'];
+            array_is_text=[intersect_text];  //加载自定义内容
+        }else{  //设置默认值
+            array_is_text=['我知道遇见你不容易，错过会很可惜，我不希望余生都是回忆，我想余生每天都是你，我爱你。'];
             // array_str_temp=[];
             // random_text_array(array_str_temp,3);
             // array_is_text[0]=array_is_text[0]+'<br>'+array_str_temp.join('<br>');
@@ -30,11 +30,11 @@
     }  
 
     function init_is_typed(){
-        $(".div_is_open_bg").fadeOut("slow"); //闅愯棌鍒濆bg 
+        $(".div_is_open_bg").fadeOut("slow"); //隐藏初始bg 
 
-        // 璁剧疆姝ｆ枃涔嬪墠鐨勭収鐗�
+        // 设置正文之前的照片
         var img_src=start_content['img_src'];
-        if(typeof(start_content['img_bool'])!='undefined' && start_content['img_bool']=='img_true'){ //濡傛灉璁剧疆浜嗙収鐗�
+        if(typeof(start_content['img_bool'])!='undefined' && start_content['img_bool']=='img_true'){ //如果设置了照片
             if(typeof(img_src)!='undefined' && img_src!=''){
                 $("#div_is_img").fadeIn("slow"); //
                 $("#div_is_img .img_is_typed").attr('src',img_src); //
@@ -46,40 +46,40 @@
             $("#div_is_img .img_is_typed").attr('src',random_img); //
         }
 
-        //浠ヤ笅鏄墦瀛楁晥鏋滅殑js 
+        //以下是打字效果的js 
         var str_cursorChar; 
         if(typeof(start_content['cursor_char'])!='undefined' && start_content['cursor_char']!=''){
-            switch(start_content['cursor_char']){ //璁剧疆鎵撳瓧鍏夋爣鐨勬牱寮�
+            switch(start_content['cursor_char']){ //设置打字光标的样式
                 case 'cursor_heart':
-                    str_cursorChar='鉂�';
+                    str_cursorChar='❤';
                     break;
                 case 'cursor_sub':
                     str_cursorChar='_';
                     break;
                 case 'cursor_music':
-                    str_cursorChar='鈾�';
+                    str_cursorChar='♫';
                     break;
                 case 'cursor_star':
-                    str_cursorChar='鈽�';
+                    str_cursorChar='★';
                     break;
                 case 'cursor_sun':
-                    str_cursorChar='鈽€';
+                    str_cursorChar='☀';
                     break;
                 default:
                     str_cursorChar='|';
             }
         }else{
-            str_cursorChar='鉂�';
+            str_cursorChar='❤';
         }
 
         var typed_intersect = new Typed('#span_is_typed', {
-            strings: array_is_text, //杈撳叆鍐呭, 鏀寔html鏍囩
-            typeSpeed: 150, //鎵撳瓧閫熷害
-            // backSpeed: 50, //鍥為€€閫熷害
+            strings: array_is_text, //输入内容, 支持html标签
+            typeSpeed: 150, //打字速度
+            // backSpeed: 50, //回退速度
             // backDelay: 1000, 
-            loop: false, //瑕佷笉瑕佸惊鐜� 
-            cursorChar: str_cursorChar,//鏇挎崲鍏夋爣鐨勬牱寮�
-            contentType: 'html', //鍊间负html鏃讹紝灏嗘墦鍗扮殑鏂囨湰鏍囩鐩存帴瑙ｆ瀽html鏍囩
+            loop: false, //要不要循环 
+            cursorChar: str_cursorChar,//替换光标的样式
+            contentType: 'html', //值为html时，将打印的文本标签直接解析html标签
             onComplete: function(abc){
                         console.log(abc);
                         console.log('finished typing words');
@@ -91,25 +91,25 @@
         });
     } 
 
-    function random_text_array(temp_array,length){  //鑾峰彇闅忔満鐨勬ā鏉垮浘鐗�
+    function random_text_array(temp_array,length){  //获取随机的模板图片
         console.log('random_text_array');
         var random_array=[];
         while(random_array.length<length){
             // var random_num=Math.floor(Math.random()*(array_as_pics.length-0))+0;
-            var random_num=Math.floor(Math.random()*(array_as_words_love.length)); //闅忔満鍙栧€� 
+            var random_num=Math.floor(Math.random()*(array_as_words_love.length)); //随机取值 
             if(random_array.indexOf(random_num)==-1){
                 random_array.push(random_num);
             }
         }
         // console.log(random_array);
         for(var i=0; i<length; i++){  
-            temp_array.push(array_as_words_love[random_array[i]]); //鑾峰彇闅忔満鐨勬ā鏉垮浘鐗�
+            temp_array.push(array_as_words_love[random_array[i]]); //获取随机的模板图片
         }             
     }
 
-    function random_img_as(){  //鑾峰彇闅忔満鐨勬ā鏉垮浘鐗�
+    function random_img_as(){  //获取随机的模板图片
         // console.log('random_img_as'); 
-        var random_num=Math.floor(Math.random()*(array_as_pics_s.length)); //闅忔満鍙栧€� 
+        var random_num=Math.floor(Math.random()*(array_as_pics_s.length)); //随机取值 
         var random_img=array_as_pics_s[random_num];
         return random_img;
     } 
@@ -117,17 +117,17 @@
 
 
 
-    // 杩欐槸鐢诲竷鍔ㄧ敾鑳屾櫙鐨刯s
+    // 这是画布动画背景的js
     var canvas_is = document.getElementById("canvas_is");
     var ctx_is = canvas_is.getContext("2d");
-    //璁剧疆鐢诲竷鐨勫ぇ灏�
+    //设置画布的大小
     var cw_is = canvas_is.width = window.innerWidth,
         cx = cw_is / 2;
     var ch_is = canvas_is.height = window.innerHeight,
         cy = ch_is / 2;
 
-    ctx_is.fillStyle = "#483D8B"; //杩欎釜浼间箮娌℃湁鐢紵锛�
-    var linesNum = 25; //绾挎潯鐨勬暟閲�
+    ctx_is.fillStyle = "#483D8B"; //这个似乎没有用？？
+    var linesNum = 25; //线条的数量
     var linesRy = [];  //
     var requestId = null;
 
@@ -143,7 +143,7 @@
     }, 15);
 
 
-    // 鐢荤嚎
+    // 画线
     function Line_is(flag) {
         this.flag = flag;
         this.a = {};
@@ -165,7 +165,7 @@
         this.vb = randomIntFromInterval(25, 100) / 100;
 
         this.draw = function () {
-            ctx_is.strokeStyle = "#D8BFD8"; //绾挎潯鐨勯鑹�                    
+            ctx_is.strokeStyle = "#D8BFD8"; //线条的颜色                    
             ctx_is.beginPath();
             ctx_is.moveTo(this.a.x, this.a.y);
             ctx_is.lineTo(this.b.x, this.b.y);
@@ -257,10 +257,10 @@
         }
     }
 
-    // 鐢熸垚鐩镐氦鐐�
+    // 生成相交点
     function markPoint(p) {
         ctx_is.beginPath();
-        ctx_is.fillStyle = "#DDA0DD"; //鐩镐氦鐐圭殑棰滆壊
+        ctx_is.fillStyle = "#DDA0DD"; //相交点的颜色
         ctx_is.arc(p.x, p.y, 2, 0, 2 * Math.PI);
         ctx_is.fill();
     }
@@ -268,5 +268,6 @@
     function randomIntFromInterval(mn, mx) {
         return ~~(Math.random() * (mx - mn + 1) + mn);
     }
+
 
 
