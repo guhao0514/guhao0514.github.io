@@ -1,0 +1,5 @@
+更改第6行代码：<title>爱你永无限??</title>
+
+更改第191行代码：                    <img id='img_music' src='logo.jpg' style='-webkit-animation:music_play_rotate 1s linear infinite'> 
+
+更改第210行代码：<a href="http://www.guxiaohao.com"><span>谷浩</span></a>
