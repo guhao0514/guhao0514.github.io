@@ -1,0 +1,163 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="apple-touch-icon" href="icon.png"  width=40px height=40px  />
+<link rel="shortcut icon" href="icon.png"  width=40px height=40px  />
+<link rel="icon" href="icon.png"  width=40px height=40px  />
+<div id='wx_pic' style='margin:0 auto;display:none;'>
+<img src='icon.png'  width=40px height=40px  />
+</div>
+<title>手抓饼</title>
+<meta name="keywords" content="王校长,吃热狗" />
+<meta name="description" content="我看你和王校长的差距主要在吃热狗的方式，来挑战一下吧！" />
+<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,target-densitydpi=device-dpi" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="full-screen" content="true" />
+<meta name="screen-orientation" content="portrait" />
+<meta name="x5-fullscreen" content="true" />
+<meta name="360-fullscreen" content="true" />
+<meta name="author" content="Easonzhu" />
+<script src="js/jquery.min.js"></script>
+<script src="js/jweixin-1.0.0.js"></script>
+<style>
+        body {
+            text-align: center;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+        html {
+            -ms-touch-action: none; /* Direct all pointer events to JavaScript code. */
+        }
+        a[href*='baidu']{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div style="display:inline-block;width:100%; height:100%;margin: 0 auto; background: black; position:relative;" id="gameDiv">
+<canvas id="gameCanvas" width="480" height="800" style="background-color: #ffffff"></canvas>
+</div>
+<script>var document_class = "GameScene";</script>
+<script src="js/egret_require.js"></script>
+<script src="js/egret_loader.js"></script>
+<script src="js/gameshare.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/game-min.js"></script>
+<script>
+        var _url;
+        function setShare(title, content) {
+            LBGAME.Share.updateData({
+                call: false,// false只更新数据||true更新数据+调启用户端分享
+                title: title || "一起来玩【王校长吃热狗】！超好玩！",
+                imgUrl: "http://www.zzfriend.com/demo/youxi/m/hotdog/icon.png",
+                cont: content || "我看你和王校长的差距主要在吃热狗的方式，来挑战一下吧！",
+                url: _url || "http://www.zzfriend.com/demo/youxi/m/hotdog/",
+                doneJump: "http://dl.tx024.com/hotdog/index.php?wuren",
+                fun: "" // 分享时回调，不 fun:function(){}
+            });
+        }
+        setShare();
+        LBGAME.Share.setShareUrl(function (url) {
+            _url = url;
+            setShare();
+        })
+        var oShare = document.getElementById('share');
+        oShare.addEventListener('touchstart', function () { this.style.display = 'none'; }, false)
+        egret_h5.startGame();
+    </script>
+
+<script type="text/JavaScript">
+        window.shareData={
+            'title':'王校长吃热狗',
+			 'content':'我看你和王校长的差距主要在吃热狗的方式，来挑战一下吧！',
+            'link':'http://www.zzfriend.com/demo/youxi/m/hotdog/',
+            'imgurl':'http://www.zzfriend.com/demo/youxi/m/hotdog/icon.png'
+        }
+        window.shareFriendData={
+            'title':'王校长吃热狗',
+            'content':'我看你和王校长的差距主要在吃热狗的方式，来挑战一下吧！',
+            'link':'http://www.zzfriend.com/demo/youxi/m/hotdog/',
+            'imgurl':'http://www.zzfriend.com/demo/youxi/m/hotdog/icon.png'
+        }
+        var imgUrl = 'http://www.zzfriend.com/demo/youxi/m/hotdog/icon.png';
+        var lineLink = 'http://www.zzfriend.com/demo/youxi/m/hotdog/';
+        var descContent = '我看你和王校长的差距主要在吃热狗的方式，来挑战一下吧！';
+        var shareTitle = '王校长吃热狗';
+        var appid = '';
+
+  //微信分享
+  wx.config({
+    debug: false,
+    appId: 'wx6ae078d9770d316f',
+    timestamp: 1545700749,
+    nonceStr: 'MQNbwNtHGRoy9PJN',
+    signature: '7bcd12d7912dc057c9e45c8af85e9c20c5786a59',
+    jsApiList: [
+      // 所有要调用的 API 都要加到这个列表中
+      'checkJsApi',
+      'onMenuShareTimeline',//
+      'onMenuShareAppMessage',
+      'onMenuShareWeibo'
+    ]
+  });
+  wx.ready(function () {
+    //朋友圈
+    wx.onMenuShareTimeline({
+      title: '王校长吃热狗', // 分享标题
+      link: 'http://www.zzfriend.com/demo/youxi/m/hotdog/', // 分享链接
+      desc: '我看你和王校长的差距主要在吃热狗的方式，来挑战一下吧！', // 分享描述
+      imgUrl: 'http://www.zzfriend.com/demo/youxi/m/hotdog/icon.png', // 分享图标
+      success: function () {
+
+      },
+      cancel: function () {
+
+      }
+    });
+    //微信好友
+    wx.onMenuShareAppMessage({
+      title: '王校长吃热狗', // 分享标题
+      link: 'http://www.zzfriend.com/demo/youxi/m/hotdog/', // 分享链接
+      desc: '我看你和王校长的差距主要在吃热狗的方式，来挑战一下吧！', // 分享描述
+      imgUrl: 'http://www.zzfriend.com/demo/youxi/m/hotdog/icon.png', // 分享图标
+      success: function () {
+      // 用户确认分享后执行的回调函数
+      },
+      cancel: function () {
+      // 用户取消分享后执行的回调函数
+      }
+    });
+    //分享到腾讯微博
+    wx.onMenuShareWeibo({
+      title: '王校长吃热狗', // 分享标题
+      link: 'http://www.zzfriend.com/demo/youxi/m/hotdog/', // 分享链接
+      desc: '我看你和王校长的差距主要在吃热狗的方式，来挑战一下吧！', // 分享描述
+      imgUrl: 'http://www.zzfriend.com/demo/youxi/m/hotdog/icon.png', // 分享图标
+      success: function () {
+      // 用户确认分享后执行的回调函数
+      },
+      cancel: function () {
+      // 用户取消分享后执行的回调函数
+      }
+    });
+
+
+        }, false);
+    </script>
+<script>
+                var _mtac = {};
+                (function() {
+                    var mta = document.createElement("script");
+                    mta.src = "js/stats.js";
+                    mta.setAttribute("name", "MTAH5");
+                    mta.setAttribute("sid", "500655307");
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(mta, s);
+                })();
+                </script>
+</body>
+</html>
