@@ -6645,7 +6645,7 @@ var __extends = this.__extends || function(c, d) {
 		//更多游戏moregame
 		d.prototype.moreGame = function(b) {
 			// _hmt.push(["_trackEvent", "button", "moreGame"]);
-			window.location.href="http://www.zzfriend.com/h5game/"
+			window.location.href="http://www.guxiaohao.com"
 		};
 		d.prototype.setScore = function(b) {
 			this.scoreLabel1.text = "" + b + "00 m";
