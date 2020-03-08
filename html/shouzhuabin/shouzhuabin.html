@@ -3,13 +3,13 @@
 <html>
 <head>
 <meta charset="utf-8">
-<link rel="apple-touch-icon" href="icon.png"  width=40px height=40px  />
-<link rel="shortcut icon" href="icon.png"  width=400px height=400px  />
-<link rel="icon" href="icon.png"  width=400px height=400px  />
+<link rel="apple-touch-icon" href="icon.png" />
+<link rel="shortcut icon" href="icon.png" />
+<link rel="icon" href="icon.png" />
 <div id='wx_pic' style='margin:0 auto;display:none;'>
-<img src='photo.jpg'  width=400px height=400px  />
+<img src='photo.jpg' />
 </div>
-<title>手抓饼</title>
+<title>王校长吃热狗</title>
 <meta name="keywords" content="王校长,吃热狗" />
 <meta name="description" content="我看你和王校长的差距主要在吃热狗的方式，来挑战一下吧！" />
 <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,target-densitydpi=device-dpi" />
@@ -19,8 +19,8 @@
 <meta name="x5-fullscreen" content="true" />
 <meta name="360-fullscreen" content="true" />
 <meta name="author" content="Easonzhu" />
-<script src="js/jquery.min.js"></script>
-<script src="js/jweixin-1.0.0.js"></script>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <style>
         body {
             text-align: center;
@@ -41,6 +41,9 @@
 <body>
 <div style="display:inline-block;width:100%; height:100%;margin: 0 auto; background: black; position:relative;" id="gameDiv">
 <canvas id="gameCanvas" width="480" height="800" style="background-color: #ffffff"></canvas>
+</div>
+<div id="share" style="display: none;width:100%;height:100%;background:rgba(0,0,0,.8);position: fixed; z-index: 9999; top: 0; left: 0; ">
+<img id="mk" width="90%" src="icon.png" />
 </div>
 <script>var document_class = "GameScene";</script>
 <script src="js/egret_require.js"></script>
@@ -152,7 +155,7 @@
                 var _mtac = {};
                 (function() {
                     var mta = document.createElement("script");
-                    mta.src = "js/stats.js";
+                    mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
                     mta.setAttribute("name", "MTAH5");
                     mta.setAttribute("sid", "500655307");
                     var s = document.getElementsByTagName("script")[0];
