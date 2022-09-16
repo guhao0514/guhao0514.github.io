@@ -1,0 +1,53 @@
+<br><br>
+-- 1.查询预警人数<br><br>
+SELECT
+	COUNT( * ) 
+FROM
+	(
+SELECT
+	twu.id,
+	twu.union_id AS unionId,
+	twu.user_tag AS userTag,
+	twu.nickname,
+	twu.head_img_url AS headImgUrl,
+	twu.black_time AS createTime,
+	twu.register_phone AS registerPhone,
+	twu.register_name AS registerName,
+	twu.sex,
+	twu.black_time,
+	( SELECT count( DISTINCT tlr.city_code ) FROM t_location_record tlr WHERE tlr.user_id = twu.id ) AS wzNumber 
+FROM
+	t_wechat_user twu 
+WHERE
+	twu.is_in_black = 0 
+	) a 
+WHERE
+	a.wzNumber > 1
+<br><br>
+-- 2.查询预警人信息<br><br>
+SELECT
+	* 
+FROM
+	(
+SELECT
+	twu.id,
+	twu.union_id AS unionId,
+	twu.user_tag AS userTag,
+	twu.nickname,
+	twu.head_img_url AS headImgUrl,
+	twu.black_time AS createTime,
+	twu.register_phone AS registerPhone,
+	twu.register_name AS registerName,
+	twu.sex,
+	twu.black_time,
+	( SELECT count( DISTINCT tlr.city_code ) FROM t_location_record tlr WHERE tlr.user_id = twu.id ) AS wzNumber 
+FROM
+	t_wechat_user twu 
+WHERE
+	twu.is_in_black = 0 
+	) a 
+WHERE
+	a.wzNumber > 1
+ORDER BY
+	a.wzNumber DESC 
+	LIMIT 10
